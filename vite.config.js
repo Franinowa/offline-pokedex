@@ -7,8 +7,8 @@ export default defineConfig({
     plugins: [
         VitePWA({
             registerType: 'injectManifest',
-            srcDir: 'src',
-            filename: 'my-sw.js',
+            // srcDir: 'src',
+            // filename: 'my-sw.js',
             devOptions: {
                 enabled: true
             },
