@@ -3,7 +3,6 @@
     "appName": "offline-pokedex",
     "webDir": "dist",
     "server": {
-        "androidScheme": "https",
-        "url": "https://735a-84-125-125-104.ngrok-free.app"
+        "androidScheme": "https"
     }
 }

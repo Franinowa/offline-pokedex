@@ -12,6 +12,7 @@ export default defineConfig({
             // },
             manifest: {
                 id: "/",
+                start_url: "/",
                 name: "Pokedex",
                 short_name: "Pokedex",
                 description: "A portable encyclopedic reference tool, able to give information about a certain species of Pokémon even if a Trainer has not seen or caught it.",
