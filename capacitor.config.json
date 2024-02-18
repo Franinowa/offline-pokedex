@@ -2,7 +2,12 @@
     "appId": "com.example.app",
     "appName": "offline-pokedex",
     "webDir": "dist",
+    "ios": {
+        "limitsNavigationsToAppBoundDomains": true
+    },
     "server": {
-        "androidScheme": "https"
+        "androidScheme": "https",
+        "iosScheme": "https",
+        "url": "https://offline-pokedex.netlify.app/"
     }
 }

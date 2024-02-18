@@ -19,10 +19,6 @@
 						<h1 class="text-2xl font-bold text-gray-800">
 							Pokédex
 						</h1>
-
-						<!-- <p class="text-gray-500">
-							({{ pokemons.length }})
-						</p> -->
 					</div>
 
 					<div>
@@ -46,34 +42,52 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="px-6 py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-			<TransitionGroup
-				enter-active-class="transition-all duration-300 ease-out"
-				enter-from-class="opacity-0 translate-y-12"
-				enter-to-class="opacity-100 translate-y-0"
-				leave-active-class="transition-all duration-300 ease-in"
-				leave-from-class="opacity-100 translate-y-0"
-				leave-to-class="opacity-0 translate-y-12"
-			>
-				<PokemonItem
-					v-for="(pokemon, index) in paginatedPokemons"
-					:key="pokemon.id"
-					:pokemon="pokemon"
-					:index="index"
-					:style="{ 'transition-delay': `${(index - (pokemonsMeta.page - 1) * 20) * 50}ms` }"
-					@click="selectPokemon(pokemon)"
+
+		<div class="px-6 py-1">
+			<div class="relative pl-9 pr-6 py-1.5 flex items-center bg-gray-100 rounded-lg">
+				<MagnifyingGlassIcon 
+					class="absolute left-2 w-5 h-5" 
 				/>
-			</TransitionGroup>
+
+				<input 
+					type="text"
+					placeholder="Search by pokemon name or #id"
+					class="w-full bg-transparent border-none focus:outline-none"
+				/>
+			</div>
 		</div>
 
-		<div 
-			v-if="pokemonsLoading"
-			class="mt-4 "
-		>
-			<p class="text-gray-400">
-				Loading pokemons...
-			</p>
+		<div class="px-6 py-4">
+			
+
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+				<TransitionGroup
+					enter-active-class="transition-all duration-300 ease-out"
+					enter-from-class="opacity-0 translate-y-12"
+					enter-to-class="opacity-100 translate-y-0"
+					leave-active-class="transition-all duration-300 ease-in"
+					leave-from-class="opacity-100 translate-y-0"
+					leave-to-class="opacity-0 translate-y-12"
+				>
+					<PokemonItem
+						v-for="(pokemon, index) in paginatedPokemons"
+						:key="pokemon.id"
+						:pokemon="pokemon"
+						:index="index"
+						:style="{ 'transition-delay': `${(index - (pokemonsMeta.page - 1) * 20) * 50}ms` }"
+						@click="selectPokemon(pokemon)"
+					/>
+				</TransitionGroup>
+			</div>
+
+			<div 
+				v-if="pokemonsLoading"
+				class=""
+			>
+				<p class="text-gray-400">
+					Loading pokemons...
+				</p>
+			</div>
 		</div>
 		
 		<PokemonCard 
@@ -90,6 +104,7 @@
 		SignalIcon,
 		SignalSlashIcon,
 		ArrowPathIcon,
+		MagnifyingGlassIcon,
 	} from '@heroicons/vue/24/outline';
 
 	import { 
