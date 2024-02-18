@@ -58,8 +58,6 @@
 		</div>
 
 		<div class="px-6 py-4">
-			
-
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
 				<TransitionGroup
 					enter-active-class="transition-all duration-300 ease-out"
@@ -82,7 +80,7 @@
 
 			<div 
 				v-if="pokemonsLoading"
-				class=""
+				class="mt-6"
 			>
 				<p class="text-gray-400">
 					Loading pokemons...
