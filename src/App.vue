@@ -102,7 +102,6 @@
 	import { useInfiniteScroll } from '@vueuse/core';
 
 	import { getPokemons as apiGetPokemons } from '/src/utils/pokemon.js';
-	
 
 	// network
 	const { isOnline } = useNetwork();

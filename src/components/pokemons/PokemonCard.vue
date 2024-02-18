@@ -4,18 +4,20 @@
             class="h-full flex flex-col"
             :class="[pokemonTypeClass]"
         >
-            <header class="px-6 py-4 flex items-center justify-between">
-                <button @click="close">
-                    <ArrowLeftIcon 
-                        class="w-5 h-5 text-gray-50"
-                    />
-                </button>
+            <header class="pt-safe">
+                <div class="px-6 py-4 flex items-center justify-between">
+                    <button @click="close">
+                        <ArrowLeftIcon 
+                            class="w-5 h-5 text-gray-50"
+                        />
+                    </button>
 
-                <button>
-                    <HeartIcon 
-                        class="w-5 h-5 text-gray-50"
-                    />
-                </button>
+                    <button>
+                        <HeartIcon 
+                            class="w-5 h-5 text-gray-50"
+                        />
+                    </button>
+                </div>
             </header>
 
             <div class="px-6 py-4 z-50">
